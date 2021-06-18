@@ -1,5 +1,10 @@
 import csv
 import glob
+from tkinter import *
+
+
+
+
 
 def searchDirectoryForDecks():
     decks = []
@@ -20,10 +25,12 @@ def loadDeck(filename):
     return deck
 
 
-def displayDirectoryDecks(decks):
+def displayDirectoryDecks(root, decks):
     counter = 1
     for deck in decks:
-        print(str(counter) + ". " + deck.title())
+        deckName = str(counter) + ". " + deck.title()
+        deckLabel = Label(root, text=str(deckName))
+        deckLabel.pack()
         counter += 1
 
 
